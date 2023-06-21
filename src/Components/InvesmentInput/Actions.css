@@ -1,0 +1,9 @@
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  button:hover {
+    background: linear-gradient(180deg, #1b5346, #113c32);
+  }
