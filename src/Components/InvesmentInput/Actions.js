@@ -2,10 +2,15 @@ import './Actions.css';
 import CalculateButton from './CalculateButton';
 import ResetButton from './ResetButton';
 
-export default function Actions() {
+export default function Actions(props) {
+    function resetClickHandler() {
+      console.log("resetClickHandler Executed!");
+      props.onReset();
+    }
+
     return (
         <p className="actions">
-          <ResetButton/>
+          <ResetButton onResetClick={resetClickHandler}/>
           <CalculateButton/>
         </p>
     );
