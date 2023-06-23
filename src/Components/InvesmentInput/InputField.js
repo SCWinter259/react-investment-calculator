@@ -4,11 +4,11 @@ import styles from './InputField.module.css';
 // This component is the text box in the form and the label for it
 
 export default function InputField(props) {
-    const [userInput, setUserInput] = useState('');
+    let userInput = props.inputValue;
 
     function userInputChangeHandler(event) {
-        setUserInput(event.target.value);
         props.onValueChange(event);
+
     }
 
     return (

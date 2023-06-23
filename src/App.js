@@ -6,9 +6,9 @@ import './index.css';
 
 function App() {
   const [yearlyData, setYearlyData] = useState([]);
+  const fallBackText = "Insufficient Data Input!";
 
   const calculateHandler = (userInput) => {
-    console.log("calculateHandler Executed!");
     // Should be triggered when form is submitted
 
     const yearlyData = []; // per-year results
@@ -36,8 +36,6 @@ function App() {
 
     // do something with yearlyData ...
     setYearlyData(yearlyData);
-
-    console.log(yearlyData);
   };
 
   return (
@@ -47,8 +45,8 @@ function App() {
 
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
-
-      <ResultTable data={yearlyData}/>
+      {(yearlyData.length === 0) && fallBackText}
+      {!(yearlyData.length === 0) && <ResultTable data={yearlyData}/>}
     </div>
   );
 }
