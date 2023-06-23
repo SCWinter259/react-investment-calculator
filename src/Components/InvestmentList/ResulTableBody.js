@@ -5,8 +5,8 @@ export default function ResultTableBody(props) {
     return (
         <tbody className={styles.tbody}>
             {props.data.map((item) => (
-                <TableResultItem itemData={item}/>
-            ))}
+                <TableResultItem key={item.year} itemData={item}/>
+            ))}  
         </tbody>
     );
 }

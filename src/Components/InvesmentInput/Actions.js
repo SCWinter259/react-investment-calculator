@@ -4,7 +4,6 @@ import ResetButton from './ResetButton';
 
 export default function Actions(props) {
     function resetClickHandler() {
-      console.log("resetClickHandler Executed!");
       props.onReset();
     }
 

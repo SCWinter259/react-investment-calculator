@@ -28,7 +28,6 @@ export default function InputForm(props) {
     }
 
     function resetHandler() {
-        console.log("resetHandler Executed!");
         setCurrentSavings('');
         setYearlyContribution('');
         setExpectedReturn('');
@@ -36,7 +35,6 @@ export default function InputForm(props) {
     }
 
     function formSubmitHandler(event) {
-        console.log("formSubmitHandler Executed!");
         event.preventDefault();
 
         const data = {
@@ -46,7 +44,6 @@ export default function InputForm(props) {
             "duration": duration
         }
 
-        console.log(data);
         props.onCalculate(data);
         resetHandler();
     }
@@ -57,11 +54,13 @@ export default function InputForm(props) {
                 <InputField 
                     id="current-savings" 
                     labelName="Current Savings ($)"
+                    inputValue={currentSavings}
                     onValueChange={currentSavingsChangeHandler}
                 />
                 <InputField 
                     id="yearly-contribution" 
                     labelName="Yearly Savings ($)"
+                    inputValue={yearlyContribution}
                     onValueChange={yearlyContributionChangeHandler}
                 />
             </div>
@@ -69,11 +68,13 @@ export default function InputForm(props) {
                 <InputField 
                     id="expected-return" 
                     labelName="Expected Interest (%, per year)"
+                    inputValue={expectedReturn}
                     onValueChange={expectedReturnChangeHandler}
                 />
                 <InputField 
                     id="duration" 
                     labelName="Investment Duration (years)"
+                    inputValue={duration}
                     onValueChange={durationChangeHandler}
                 />
             </div>
